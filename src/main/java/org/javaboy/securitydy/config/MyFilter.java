@@ -24,6 +24,7 @@ public class MyFilter implements FilterInvocationSecurityMetadataSource {
 
     @Override
     public Collection<ConfigAttribute> getAttributes(Object o) throws IllegalArgumentException {
+        // 每次请求都会走这个方法
         // 强转之后获取请求的url
         String requestUrl = ((FilterInvocation) o).getRequestUrl();
         // 查询所有的菜单信息数据加入缓存
